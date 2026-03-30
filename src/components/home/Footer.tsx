@@ -22,14 +22,14 @@ export function Footer() {
           </div>
 
           <nav className={styles.nav} aria-label="Footer navigation">
-            {NAV_LINKS.map(({ label, href, external }) => (
+            {NAV_LINKS.map((link) => (
               <a
-                key={label}
-                href={href}
+                key={link.label}
+                href={link.href}
                 className={styles.link}
-                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+                {...('external' in link && link.external ? { target: "_blank", rel: "noreferrer" } : {})}
               >
-                {label}
+                {link.label}
               </a>
             ))}
           </nav>
