@@ -11,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@arpit194/themeforge": "file:../ThemeForge/arpit194-themeforge-0.1.1.tgz",
+    "@arpit194/themeforge": "^0.2.0",
     "@base-ui/react": "^1.3.0",
     "@tanstack/react-router": "^1.168.7",
     "class-variance-authority": "^0.7.1",
