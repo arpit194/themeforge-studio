@@ -6,7 +6,7 @@ const PROPS = [
   {
     name: "theme",
     type: "Partial<ThemeConfig>",
-    typeLink: "/docs/types#ThemeConfig",
+    typeHash: "ThemeConfig",
     default: "—",
     required: false,
     description: "Base color scales. Each key is a hex string. Unspecified scales fall back to built-in defaults.",
@@ -14,7 +14,7 @@ const PROPS = [
   {
     name: "spacing",
     type: "Partial<SpacingTokens>",
-    typeLink: "/docs/types#SpacingTokens",
+    typeHash: "SpacingTokens",
     default: "—",
     required: false,
     description: "Override individual spacing scale keys.",
@@ -22,7 +22,7 @@ const PROPS = [
   {
     name: "radius",
     type: "Partial<RadiusTokens>",
-    typeLink: "/docs/types#RadiusTokens",
+    typeHash: "RadiusTokens",
     default: "—",
     required: false,
     description: "Override individual border radius keys.",
@@ -30,7 +30,7 @@ const PROPS = [
   {
     name: "shadows",
     type: "Partial<ShadowTokens>",
-    typeLink: "/docs/types#ShadowTokens",
+    typeHash: "ShadowTokens",
     default: "—",
     required: false,
     description: "Override individual shadow keys. Each value is an array of shadow layers.",
@@ -38,7 +38,7 @@ const PROPS = [
   {
     name: "typography",
     type: "TypographyConfig",
-    typeLink: "/docs/types#TypographyConfig",
+    typeHash: "TypographyConfig",
     default: "—",
     required: false,
     description: "Override font families, sizes, weights, line heights, letter spacing, and composite text styles. All sub-keys are optional.",
@@ -46,7 +46,7 @@ const PROPS = [
   {
     name: "semantic",
     type: "Partial<SemanticTokens>",
-    typeLink: "/docs/types#SemanticTokens",
+    typeHash: "SemanticTokens",
     default: "—",
     required: false,
     description: "Override light mode semantic token mappings. Each value is a SemanticColorRef pointing to a scale and shade.",
@@ -54,7 +54,7 @@ const PROPS = [
   {
     name: "semanticDark",
     type: "Partial<SemanticTokens>",
-    typeLink: "/docs/types#SemanticTokens",
+    typeHash: "SemanticTokens",
     default: "—",
     required: false,
     description: "Override semantic tokens in dark mode only. Applied on top of the default dark mode semantic mappings.",
@@ -62,7 +62,7 @@ const PROPS = [
   {
     name: "colorScheme",
     type: "ColorScheme",
-    typeLink: "/docs/types#ColorScheme",
+    typeHash: "ColorScheme",
     default: "'system'",
     required: false,
     description: "Controls which color mode is active. 'system' follows the OS prefers-color-scheme media query.",
@@ -70,7 +70,7 @@ const PROPS = [
   {
     name: "cssVarPrefix",
     type: "string",
-    typeLink: null,
+    typeHash: null,
     default: "'tf'",
     required: false,
     description: "Prefix for all generated CSS variable names. Change this to namespace tokens in a larger system.",
@@ -78,7 +78,7 @@ const PROPS = [
   {
     name: "generateShades",
     type: "GenerateShadesFn",
-    typeLink: "/docs/types#GenerateShadesFn",
+    typeHash: "GenerateShadesFn",
     default: "built-in",
     required: false,
     description: "Replace the built-in shade generation algorithm. Receives a hex string, must return ColorShades (keys 50–950).",
@@ -86,7 +86,7 @@ const PROPS = [
   {
     name: "children",
     type: "ReactNode",
-    typeLink: null,
+    typeHash: null,
     default: "—",
     required: true,
     description: "The subtree that receives access to all generated CSS variables.",
@@ -115,7 +115,7 @@ export function ThemeProviderPage() {
             </tr>
           </thead>
           <tbody>
-            {PROPS.map(({ name, type, typeLink, default: def, required, description }) => (
+            {PROPS.map(({ name, type, typeHash, default: def, required, description }) => (
               <tr key={name}>
                 <td>
                   <div className={styles.propName}>
@@ -126,8 +126,8 @@ export function ThemeProviderPage() {
                   </div>
                 </td>
                 <td>
-                  {typeLink
-                    ? <Link to={typeLink} className={styles.propType}>{type}</Link>
+                  {typeHash
+                    ? <Link to="/docs/types" hash={typeHash} className={styles.propType}>{type}</Link>
                     : <span className={styles.propType}>{type}</span>
                   }
                 </td>

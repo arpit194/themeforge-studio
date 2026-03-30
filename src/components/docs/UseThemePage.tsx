@@ -7,49 +7,49 @@ const RETURN_VALUES = [
   {
     key: "colors",
     type: "ThemeColors",
-    typeLink: "/docs/types#ThemeColors",
+    typeHash: "ThemeColors",
     description: "Resolved hex values for every color scale and shade. Keyed by scale name, then shades 50–950.",
   },
   {
     key: "spacing",
     type: "SpacingTokens",
-    typeLink: "/docs/types#SpacingTokens",
+    typeHash: "SpacingTokens",
     description: "Resolved spacing values as strings (e.g. '16px'). Keyed by spacing scale key.",
   },
   {
     key: "radius",
     type: "RadiusTokens",
-    typeLink: "/docs/types#RadiusTokens",
+    typeHash: "RadiusTokens",
     description: "Resolved border radius values as strings. Keyed by radius scale key.",
   },
   {
     key: "shadows",
     type: "ShadowTokens",
-    typeLink: "/docs/types#ShadowTokens",
+    typeHash: "ShadowTokens",
     description: "Shadow layer definitions. Each value is an array of ShadowLayer objects.",
   },
   {
     key: "typography",
     type: "TypographyTokens",
-    typeLink: "/docs/types#TypographyTokens",
+    typeHash: "TypographyTokens",
     description: "All resolved typography tokens: fontFamilies, fontSizes, fontWeights, lineHeights, letterSpacing, and composite textStyles.",
   },
   {
     key: "semantic",
     type: "SemanticTokens",
-    typeLink: "/docs/types#SemanticTokens",
+    typeHash: "SemanticTokens",
     description: "Active semantic token mappings after all overrides and dark mode remapping. Each value is a SemanticColorRef { scale, shade }.",
   },
   {
     key: "isDark",
     type: "boolean",
-    typeLink: null,
+    typeHash: null,
     description: "Whether dark mode is currently active. Reflects the resolved scheme regardless of whether colorScheme is 'system' or forced.",
   },
   {
     key: "cssVarPrefix",
     type: "string",
-    typeLink: null,
+    typeHash: null,
     description: "The CSS variable prefix currently in use. Matches the cssVarPrefix prop passed to ThemeProvider. Defaults to 'tf'.",
   },
 ] as const;
@@ -96,12 +96,12 @@ export function UseThemePage() {
             </tr>
           </thead>
           <tbody>
-            {RETURN_VALUES.map(({ key, type, typeLink, description }) => (
+            {RETURN_VALUES.map(({ key, type, typeHash, description }) => (
               <tr key={key}>
                 <td><div className={styles.propName}>{key}</div></td>
                 <td>
-                  {typeLink
-                    ? <Link to={typeLink} className={styles.propType}>{type}</Link>
+                  {typeHash
+                    ? <Link to="/docs/types" hash={typeHash} className={styles.propType}>{type}</Link>
                     : <span className={styles.propType}>{type}</span>
                   }
                 </td>
