@@ -1,0 +1,25 @@
+.floatingLeft {
+  position: fixed;
+  bottom: var(--tf-spacing-2xl);
+  left: var(--tf-spacing-2xl);
+  z-index: 100;
+}
+
+.floatingRight {
+  position: fixed;
+  bottom: var(--tf-spacing-2xl);
+  right: var(--tf-spacing-2xl);
+  z-index: 100;
+}
+
+@media (max-width: 480px) {
+  .floatingLeft {
+    bottom: var(--tf-spacing-lg);
+    left: var(--tf-spacing-lg);
+  }
+
+  .floatingRight {
+    bottom: var(--tf-spacing-lg);
+    right: var(--tf-spacing-lg);
+  }
+}

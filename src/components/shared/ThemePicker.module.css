@@ -1,0 +1,103 @@
+/* ── Trigger overrides — pill shape + shadow only ── */
+
+.trigger {
+  border-radius: var(--tf-radius-full);
+  box-shadow: var(--tf-shadow-sm);
+}
+
+.label {
+  white-space: nowrap;
+}
+
+/* ── Popover popup ── */
+
+.popup {
+  background-color: var(--tf-color-bg-surface);
+  border: 1px solid var(--tf-color-border-subtle);
+  border-radius: var(--tf-radius-2xl);
+  padding: var(--tf-spacing-xl);
+  box-shadow: var(--tf-shadow-xl);
+  min-width: 280px;
+  outline: none;
+}
+
+.popupTitle {
+  font-family: var(--tf-text-label-family);
+  font-size: var(--tf-text-label-size);
+  font-weight: var(--tf-font-weight-semibold);
+  color: var(--tf-color-text-primary);
+  margin: 0 0 var(--tf-spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Pickers ── */
+
+.pickerGroup {
+  margin-bottom: var(--tf-spacing-lg);
+}
+
+.pickerGroup:last-child {
+  margin-bottom: 0;
+}
+
+.pickerLabel {
+  display: block;
+  font-family: var(--tf-text-label-family);
+  font-size: var(--tf-text-label-size);
+  font-weight: var(--tf-font-weight-medium);
+  color: var(--tf-color-text-secondary);
+  margin-bottom: var(--tf-spacing-sm);
+}
+
+.presets {
+  display: flex;
+  gap: var(--tf-spacing-xs);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.preset {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--tf-radius-full);
+  border: 2px solid var(--tf-color-border-default);
+  cursor: pointer;
+  transition: transform 150ms ease, border-color 150ms ease;
+  padding: 0;
+}
+
+.preset:hover {
+  transform: scale(1.15);
+}
+
+.presetActive {
+  border-color: var(--tf-color-border-strong);
+  transform: scale(1.15);
+}
+
+.colorInput {
+  width: 26px;
+  height: 26px;
+  border-radius: var(--tf-radius-full);
+  border: 2px solid var(--tf-color-border-default);
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  overflow: hidden;
+}
+
+.colorInput::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.colorInput::-webkit-color-swatch {
+  border: none;
+  border-radius: var(--tf-radius-full);
+}
+
+@media (max-width: 480px) {
+  .label {
+    display: none;
+  }
+}

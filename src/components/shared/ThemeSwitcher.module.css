@@ -1,0 +1,14 @@
+.fab {
+  border-radius: var(--tf-radius-full);
+  box-shadow: var(--tf-shadow-sm);
+}
+
+.label {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .label {
+    display: none;
+  }
+}

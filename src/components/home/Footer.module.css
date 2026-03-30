@@ -1,0 +1,114 @@
+.footer {
+  background-color: var(--tf-color-bg-page);
+  border-top: 1px solid var(--tf-color-border-subtle);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: var(--tf-spacing-4xl);
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--tf-spacing-4xl);
+  padding-bottom: var(--tf-spacing-3xl);
+  border-bottom: 1px solid var(--tf-color-border-subtle);
+  margin-bottom: var(--tf-spacing-2xl);
+}
+
+/* ── Brand ── */
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-spacing-sm);
+}
+
+.logo {
+  font-family: var(--tf-font-family-primary);
+  font-size: var(--tf-font-size-xl);
+  font-weight: var(--tf-font-weight-regular);
+  color: var(--tf-color-text-primary);
+  letter-spacing: var(--tf-letter-spacing-tight);
+}
+
+.tagline {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-size);
+  color: var(--tf-color-text-secondary);
+  margin: 0;
+  line-height: var(--tf-line-height-normal);
+  max-width: 280px;
+}
+
+.install {
+  font-family: var(--tf-font-family-mono);
+  font-size: var(--tf-font-size-sm);
+  color: var(--tf-color-bg-secondary);
+  background-color: var(--tf-color-bg-secondary-subtle);
+  padding: var(--tf-spacing-xs) var(--tf-spacing-md);
+  border-radius: var(--tf-radius-md);
+  border: 1px solid var(--tf-color-border-secondary);
+  display: inline-block;
+  margin-top: var(--tf-spacing-xs);
+}
+
+/* ── Nav ── */
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--tf-spacing-md);
+  align-items: flex-end;
+}
+
+.link {
+  font-family: var(--tf-text-label-family);
+  font-size: var(--tf-text-label-size);
+  font-weight: var(--tf-font-weight-medium);
+  color: var(--tf-color-text-secondary);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.link:hover {
+  color: var(--tf-color-text-primary);
+}
+
+/* ── Bottom ── */
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-font-size-xs);
+  color: var(--tf-color-text-disabled);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--tf-spacing-3xl) var(--tf-spacing-lg);
+  }
+
+  .top {
+    flex-direction: column;
+    gap: var(--tf-spacing-2xl);
+  }
+
+  .nav {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--tf-spacing-md) var(--tf-spacing-xl);
+  }
+}

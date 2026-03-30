@@ -1,0 +1,275 @@
+/* Prose styles for doc pages — all via tokens */
+
+.page h1 {
+  font-family: var(--tf-font-family-primary);
+  font-size: var(--tf-font-size-5xl);
+  font-weight: var(--tf-font-weight-regular);
+  color: var(--tf-color-text-primary);
+  letter-spacing: var(--tf-letter-spacing-tight);
+  line-height: 1.08;
+  margin: 0 0 var(--tf-spacing-md);
+}
+
+.page .lead {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-lg-size);
+  color: var(--tf-color-text-secondary);
+  line-height: var(--tf-line-height-relaxed);
+  margin: 0 0 var(--tf-spacing-3xl);
+  padding-bottom: var(--tf-spacing-3xl);
+  border-bottom: 1px solid var(--tf-color-border-subtle);
+}
+
+.page h2 {
+  font-family: var(--tf-font-family-primary);
+  font-size: var(--tf-font-size-3xl);
+  font-weight: var(--tf-font-weight-regular);
+  color: var(--tf-color-text-primary);
+  letter-spacing: var(--tf-letter-spacing-tight);
+  line-height: 1.2;
+  margin: var(--tf-spacing-4xl) 0 var(--tf-spacing-lg);
+  padding-top: var(--tf-spacing-2xl);
+  border-top: 1px solid var(--tf-color-border-subtle);
+}
+
+.page h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.page h3 {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-lg-size);
+  font-weight: var(--tf-font-weight-semibold);
+  color: var(--tf-color-text-primary);
+  letter-spacing: var(--tf-letter-spacing-tight);
+  margin: var(--tf-spacing-2xl) 0 var(--tf-spacing-sm);
+}
+
+.page p {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-size);
+  color: var(--tf-color-text-secondary);
+  line-height: var(--tf-line-height-relaxed);
+  margin: 0 0 var(--tf-spacing-lg);
+}
+
+.page ul, .page ol {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-size);
+  color: var(--tf-color-text-secondary);
+  line-height: var(--tf-line-height-relaxed);
+  margin: 0 0 var(--tf-spacing-lg);
+  padding-left: var(--tf-spacing-xl);
+}
+
+.page li {
+  margin-bottom: var(--tf-spacing-xs);
+}
+
+.page :not(pre) > code {
+  font-family: var(--tf-font-family-mono);
+  font-size: 0.88em;
+  color: var(--tf-color-text-primary);
+  background-color: var(--tf-color-bg-secondary-subtle);
+  padding: 1px 5px;
+  border-radius: var(--tf-radius-sm);
+  border: 1px solid var(--tf-color-border-default);
+}
+
+/* ── Callout ── */
+
+.callout {
+  display: flex;
+  gap: var(--tf-spacing-md);
+  padding: var(--tf-spacing-lg);
+  border-radius: var(--tf-radius-lg);
+  border: 1px solid var(--tf-color-border-subtle);
+  background-color: var(--tf-color-bg-subtle);
+  margin-bottom: var(--tf-spacing-lg);
+}
+
+.callout p {
+  margin: 0;
+}
+
+.calloutInfo {
+  border-color: var(--tf-color-border-info);
+  background-color: var(--tf-color-bg-info-subtle);
+}
+
+.calloutInfo p, .calloutInfo code {
+  color: var(--tf-color-text-info);
+}
+
+.calloutWarning {
+  border-color: var(--tf-color-border-warning);
+  background-color: var(--tf-color-bg-warning-subtle);
+}
+
+.calloutWarning p, .calloutWarning code {
+  color: var(--tf-color-text-warning);
+}
+
+/* ── Prop reference table ── */
+
+.propTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-size);
+}
+
+.propTable thead {
+  border-bottom: 2px solid var(--tf-color-border-subtle);
+}
+
+.propTable th {
+  text-align: left;
+  padding: var(--tf-spacing-sm) var(--tf-spacing-lg);
+  font-weight: var(--tf-font-weight-semibold);
+  color: var(--tf-color-text-primary);
+  font-size: var(--tf-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tf-letter-spacing-wider);
+  white-space: nowrap;
+}
+
+.propTable td {
+  padding: var(--tf-spacing-md) var(--tf-spacing-lg);
+  border-bottom: 1px solid var(--tf-color-border-subtle);
+  vertical-align: top;
+}
+
+.propTable tr:last-child td {
+  border-bottom: none;
+}
+
+.propName {
+  font-family: var(--tf-font-family-mono);
+  font-size: var(--tf-font-size-sm);
+  font-weight: var(--tf-font-weight-semibold);
+  color: var(--tf-color-text-primary);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: var(--tf-spacing-xs);
+  flex-wrap: wrap;
+}
+
+a.propType {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.propType:hover {
+  background-color: var(--tf-color-bg-primary-selected);
+  border-color: var(--tf-color-border-primary);
+}
+
+.propType {
+  font-family: var(--tf-font-family-mono);
+  font-size: var(--tf-font-size-xs);
+  color: var(--tf-color-text-link);
+  background-color: var(--tf-color-bg-primary-subtle);
+  border: 1px solid var(--tf-color-border-primary-focus);
+  padding: 2px 6px;
+  border-radius: var(--tf-radius-sm);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.propDefault {
+  font-family: var(--tf-font-family-mono);
+  font-size: var(--tf-font-size-xs);
+  color: var(--tf-color-text-secondary);
+  white-space: nowrap;
+}
+
+.propDesc {
+  color: var(--tf-color-text-secondary);
+  line-height: var(--tf-line-height-relaxed);
+  font-size: var(--tf-text-body-size);
+}
+
+.badge {
+  display: inline-block;
+  font-family: var(--tf-text-label-family);
+  font-size: var(--tf-font-size-xs);
+  font-weight: var(--tf-font-weight-medium);
+  padding: 1px 7px;
+  border-radius: var(--tf-radius-full);
+  vertical-align: middle;
+}
+
+.badgeRequired {
+  background-color: var(--tf-color-bg-error-subtle);
+  color: var(--tf-color-text-error);
+  border: 1px solid var(--tf-color-border-error);
+}
+
+.badgeOptional {
+  background-color: var(--tf-color-bg-subtle);
+  color: var(--tf-color-text-secondary);
+  border: 1px solid var(--tf-color-border-subtle);
+}
+
+/* ── Token table ── */
+
+.tableWrap {
+  overflow-x: auto;
+  margin-bottom: var(--tf-spacing-2xl);
+}
+
+.tokenTable {
+  margin-bottom: 0;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--tf-spacing-2xl);
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-size);
+}
+
+.tokenTable thead {
+  border-bottom: 2px solid var(--tf-color-border-subtle);
+}
+
+.tokenTable th {
+  text-align: left;
+  padding: var(--tf-spacing-xs) var(--tf-spacing-md);
+  font-weight: var(--tf-font-weight-semibold);
+  color: var(--tf-color-text-primary);
+  font-size: var(--tf-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tf-letter-spacing-wider);
+}
+
+.tokenTable td {
+  padding: var(--tf-spacing-sm) var(--tf-spacing-md);
+  border-bottom: 1px solid var(--tf-color-border-subtle);
+  color: var(--tf-color-text-secondary);
+  vertical-align: middle;
+}
+
+.tokenTable tr:last-child td {
+  border-bottom: none;
+}
+
+.tokenTable td code {
+  font-size: var(--tf-font-size-xs);
+}
+
+.swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--tf-radius-md);
+  border: 1px solid var(--tf-color-border-subtle);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.swatchCell {
+  display: flex;
+  align-items: center;
+  gap: var(--tf-spacing-sm);
+}

@@ -1,0 +1,125 @@
+.section {
+  background-color: var(--tf-color-bg-page);
+  padding: var(--tf-spacing-7xl) var(--tf-spacing-4xl);
+  border-bottom: 1px solid var(--tf-color-border-subtle);
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--tf-spacing-5xl);
+}
+
+.eyebrow {
+  font-family: var(--tf-text-label-family);
+  font-size: var(--tf-text-label-size);
+  font-weight: var(--tf-font-weight-medium);
+  color: var(--tf-color-text-link);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 var(--tf-spacing-md);
+}
+
+.heading {
+  font-family: var(--tf-font-family-primary);
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--tf-color-text-primary);
+  font-weight: var(--tf-font-weight-regular);
+  letter-spacing: var(--tf-letter-spacing-tight);
+  line-height: 1.08;
+  margin: 0;
+}
+
+/* ── Grid ── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--tf-spacing-lg);
+}
+
+.card {
+  background-color: var(--tf-color-bg-surface);
+  border: 1px solid var(--tf-color-border-subtle);
+  border-radius: var(--tf-radius-xl);
+  padding: var(--tf-spacing-3xl);
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--tf-color-border-primary);
+  box-shadow: var(--tf-shadow-md);
+}
+
+.card:nth-child(even):hover {
+  border-color: var(--tf-color-border-secondary);
+}
+
+/* Top accent bar that reveals on hover */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--tf-color-bg-primary);
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.card:nth-child(even)::before {
+  background-color: var(--tf-color-bg-secondary);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.cardNumber {
+  font-family: var(--tf-font-family-primary);
+  font-size: var(--tf-font-size-3xl);
+  color: var(--tf-color-border-default);
+  font-weight: var(--tf-font-weight-regular);
+  display: block;
+  margin-bottom: var(--tf-spacing-lg);
+  line-height: var(--tf-line-height-none);
+}
+
+.cardTitle {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-lg-size);
+  font-weight: var(--tf-font-weight-semibold);
+  color: var(--tf-color-text-primary);
+  margin: 0 0 var(--tf-spacing-sm);
+  letter-spacing: var(--tf-letter-spacing-tight);
+}
+
+.cardDescription {
+  font-family: var(--tf-text-body-family);
+  font-size: var(--tf-text-body-size);
+  color: var(--tf-color-text-secondary);
+  line-height: var(--tf-line-height-relaxed);
+  margin: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--tf-spacing-5xl) var(--tf-spacing-lg);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,4 @@
+.page {
+  min-height: 100svh;
+  background-color: var(--tf-color-bg-page);
+}
